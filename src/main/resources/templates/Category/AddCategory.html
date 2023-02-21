@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+
+
+</header>
+
+<section class="container  content">
+<div  class="row">
+    <div class="col-4 bg-dark">
+    </div>
+    <div class="col-4">
+
+        <h1>Add Category</h1>
+    <form th:action="@{/admin/category/add}" method="post" th:object="${categoryDTO}" >
+        <input type="hidden" name="roleId" th:field="*{categoryId}">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label >Role</label>
+                <input type="text" class="form-control" name="name" id="name" th:field="*{name}" placeholder="name">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label >Description</label>
+                <input type="textarea" class="form-control" name="description"id="Descr" th:field="*{description}" placeholder="Description">
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+</div>
+</div>
+</section>
+</body>
+</html>
