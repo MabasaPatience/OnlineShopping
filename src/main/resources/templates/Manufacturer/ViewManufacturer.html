@@ -3,8 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <div th:replace="~{CommonPageslayout/common :: Myheader}"></div>
 </head>
 <body>
 
+<div class="wrapper">
+    <div th:insert="~{CommonPageslayout/common :: admin-navbar}"></div>
+    <div class="main_content container">
+        <div class="header">Welcome!! Have a nice day.</div>
+        <div class="info">
+
+
+            <h4>Category Manegment</h4>
+            <div class="row">
+                <div class="col-sm-2">
+                    <a th:href="@{/admin/manufacturer/add}" class="btn ">Create</a>
+                </div>
+                <div class="col-sm-8">
+                    <table class="table table-hover ">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">name</th>
+                            <th scope="col">addressline1</th>
+                            <th scope="col">Daddressline2</th>
+                            <th scope="col">City</th>
+                            <th scope="col">State</th>
+                            <th scope="col">zip</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Rep</th>
+                            <th scope="col">Province</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each= "manufacturer : ${manufacturers}">
+                            <td th:text="${manufacturer.getManufacturerId()}"></td>
+                            <td th:text="${manufacturer.addressline2}"></td>
+                            <td  th:text="${manufacturer.addressline2}"></td>
+                            <td th:text="${manufacturer.city}"></td>
+                            <td th:text="${manufacturer.state}"></td>
+                            <td  th:text="${manufacturer.phone}"></td>
+                            <td  th:text="${manufacturer.phone}"></td>
+                            <td th:text="${manufacturer.email}"></td>
+                            <td th:text="${manufacturer.rep}"></td>
+                            <td  th:text="${manufacturer.province}"></td>
+                            <td >
+                                <a th:href="@{category/update/{manufacturerId}(manufacturerId=${manufacturer.manufacturerId})}" class="btn btn-primary">EDIT</a>
+                                <a th:href="@{category/delete/{manufacturerId}(manufacturerId=${manufacturer.manufacturerId})}" class="btn btn-danger">DELETE</a>
+                            </td>
+
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<div th:insert="~{CommonPageslayout/common :: foot}"></div>
 </body>
 </html>

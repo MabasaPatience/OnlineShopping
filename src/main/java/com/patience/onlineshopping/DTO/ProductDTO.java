@@ -1,7 +1,13 @@
 package com.patience.onlineshopping.DTO;
 
-import java.math.BigDecimal;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProductDTO {
 
     private Integer productId;
@@ -10,9 +16,8 @@ public class ProductDTO {
     private BigDecimal markup;
     private String available;
     private String description;
-
     private int manufacturerId;
-
-    private String productCode;
-
+    private int categoryId;
+    private int productCodeId;
+    private String imageName;
 }

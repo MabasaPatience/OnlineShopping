@@ -34,6 +34,8 @@ public class Product {
     @Column(name = "DESCRIPTION")
     private String description;
 
+    @Column(name = "IMAGE_NAME")
+    private String imageName;
     //  @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
     //private List<PurchaseOrder> purchaseOrderList;
     @JoinColumn(name = "CATEGORY_ID", referencedColumnName = "CATEGORY_ID")
@@ -45,7 +47,7 @@ public class Product {
     @ManyToOne(optional=true,cascade=CascadeType.ALL)
     private Manufacturer manufacturerId;
 
-    @JoinColumn(name = "PRODUCT_CODE", referencedColumnName = "PROD_CODE")
+    @JoinColumn(name = "PROD_CODE_ID", referencedColumnName = "PROD_CODE_ID")
     @ManyToOne(optional=true,cascade=CascadeType.ALL)
-    private ProductCode productCode;
+    private ProductCode productCodeId;
 }

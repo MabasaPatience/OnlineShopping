@@ -21,27 +21,27 @@ public class RoleController {
     @GetMapping("/admin/role")
     public String viewRoles(Model model){
         model.addAttribute("listRoles",roleService.getAllRolls());
-                return "Role";
+                return "Role/ViewRole";
     }
-    @GetMapping("/admin/role/add")
+    @GetMapping("/admin/addRole")
     public String getAddRoles(Model model){
         model.addAttribute("role",new Role());
         return "Role/AddRole";
     }
 
-    @PostMapping("/admin/role/add")
+    @PostMapping("/admin/addRole")
     public String PostAddRole(@ModelAttribute("role") Role role){
         roleService.addRole(role);
         return "redirect:/admin/role";
     }
 
-    @GetMapping("admin/role/delete/{id}")
+    @GetMapping("admin/deleteRole/{id}")
     public String deleteRole(@PathVariable int id){
         roleService.removeRoleById(id);
         return "redirect:/admin/role";
     }
 
-    @GetMapping("admin/role/update/{id}")
+    @GetMapping("admin/updateRole/{id}")
     public String UpdateRole(@PathVariable int id, Model model){
         Optional<Role> role=roleService.updateRoleById(id);
         if(role.isPresent()){

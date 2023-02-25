@@ -6,7 +6,6 @@ import lombok.Data;
 import java.util.List;
 @Entity
 @Data
-
 @Table(name="USER")
 public class User {
     private static final long serialVersionUID = 1L;
@@ -28,7 +27,7 @@ public class User {
     @Column(name = "PHONE")
     private String phone;
 
-    @Column(name = "EMAIL")
+    @Column(name = "EMAIL", unique=true)
     private String email;
     @Column(name = "IMAGE")
     private String imageName;

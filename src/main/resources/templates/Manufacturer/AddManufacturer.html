@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <div th:replace="~{CommonPageslayout/common :: Myheader}"></div>
+</head>
+<body>
+
+<div class="wrapper">
+    <div th:insert="~{CommonPageslayout/common :: admin-navbar}"></div>
+    <div class="main_content container">
+        <div class="header">Welcome!! Have a nice day.</div>
+        <div class="info">
+
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-10">
+
+                    <form th:action="@{/admin/manufacturer/add}" method="post" th:object="${manufacturerDTO}">
+                        <input type="hidden" name="manufacturerId" th:field="*{manufacturerId}">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label >Name</label>
+                                <input type="text" class="form-control form-control-lg" name="name" id="name" th:field="*{name}" placeholder="name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label >Email</label>
+                                <input type="text" class="form-control form-control-lg" name="email" id="email" th:field="*{email}" placeholder="Email">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label >Phone number</label>
+                                <input type="text" class="form-control form-control-lg" name="phone" id="phone" th:field="*{phone}" placeholder="Phone Number">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label >Rep</label>
+                                <input type="text" class="form-control form-control-lg" name="rep" id="rep" th:field="*{rep}" placeholder="rep">
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label >address line1</label>
+                                <input type="text" class="form-control form-control-lg" name="addressline1"id="addressline1" th:field="*{addressline1}" placeholder="Address line 1">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label >Address line2</label>
+                                <input type="text" class="form-control form-control-lg" name="addressline2"id="addressline2" th:field="*{addressline2}" placeholder="Address line 2">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label >State</label>
+                                <select class="form-control" th:field="*{state}"id="state" name="state">
+                                    <option value="">Select State</option>
+                                    <option value="male" >Johnnesburg</option>
+                                    <option  value="Female">Polukwane</option>
+                                    <option value="male" >Durban</option>
+                                    <option  value="Female">Braam</option>
+                                    <option value="male" >Doorfotain</option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group col-md-6">
+                                <label >City</label>
+                                <select class="form-control form-control-lg" id="city" name="city">
+                                    <option value="">Select City</option>
+                                    <option value="Midrand" >Malamulele</option>
+                                    <option  value="Gauteng">Giyani</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="province">Select Province</label>
+                                <select class="form-control" id="province" name="province" placeholder="select">
+                                    <option value="">Select Province</option>
+                                    <option value="Cape Town">Cape town</option>
+                                    <option  value="Gauteng">Gauteng</option>
+                                    <option value="Limpopo">Limpopo</option>
+                                    <option  value="Durbun">Durban</option>
+                                    <option value="Mpumalanga">Mpumalanga</option>
+                                    <option  value="Free State">Free State</option>
+                                    <option value="Western cape">Western cape</option>
+                                    <option  value="Port elizabeth">Port elizabeth</option>
+
+
+                                </select>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label >Zip</label>
+                                <input type="text" class="form-control form-control-lg" name="zip" id="zip" th:field="*{zip}" placeholder="Zip">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div th:insert="~{CommonPageslayout/common :: foot}"></div>
+
+<!--
+<div class="wrapper">
+    <div th:insert="~{CommonPageslayout/common :: admin-navbar}"></div>
+    <div class="main_content container">
+        <div class="header">Welcome!! Have a nice day.</div>
+        <div class="info">
+
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-5"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+-->
+</body>
+</html>

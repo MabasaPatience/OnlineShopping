@@ -45,6 +45,9 @@ public class Manufacturer {
 
     @Column(name = "REP")
     private String rep;
+
+    @Column(name = "PROVINCE")
+    private String province;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "manufacturerId")
     private List<Product> productList;
 }

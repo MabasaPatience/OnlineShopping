@@ -23,7 +23,7 @@ private ProductCodeRepository productCodeRepository;
 
     @Override
     public void removeProductCodeById(Integer id) {
-        productCodeRepository.findById(id);
+        productCodeRepository.deleteById(id);
     }
 
     @Override

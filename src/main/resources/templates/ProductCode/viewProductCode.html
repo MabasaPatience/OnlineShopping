@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <div th:replace="~{CommonPageslayout/common :: Myheader}"></div>
+</head>
+<body>
+
+<div class="wrapper">
+  <div th:insert="~{CommonPageslayout/common :: admin-navbar}"></div>
+  <div class="main_content container">
+    <div class="header">Welcome!! Have a nice day.</div>
+    <div class="info">
+
+
+      <h4>Category Manegment</h4>
+      <div class="row">
+        <div class="col-sm-1">
+          <a th:href="@{/admin/category/add}" style="margin: 20px; background: #19b701" class="btn ">Create</a>
+        </div>
+        <div class="col-sm-10">
+          <table class="table table-hover ">
+            <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">name</th>
+              <th scope="col">Description</th>
+              <th scope="colgroup">ACTION</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each= "category : ${categories}">
+              <td th:text="${category.categoryId}"></td>
+              <td th:text="${category.getName()}"></td>
+              <td  th:text="${category.getDescription()}"></td>
+              <td >
+                <a th:href="@{category/update/{categoryId}(categoryId=${category.categoryId})}" class="btn btn-primary">EDIT</a>
+                <a th:href="@{category/delete/{categoryId}(categoryId=${category.categoryId})}" class="btn btn-danger">DELETE</a>
+              </td>
+
+            </tr>
+            </tbody>
+
+          </table>
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<div th:insert="~{CommonPageslayout/common :: foot}"></div>
+</body>
+</html>

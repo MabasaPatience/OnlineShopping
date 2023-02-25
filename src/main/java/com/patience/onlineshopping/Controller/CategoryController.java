@@ -11,24 +11,25 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Optional;
+
 @Controller
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
-
     @GetMapping("/admin/category")
     public String getCategory(Model model){
         model.addAttribute("categories", categoryService.getAllCategory() );
         return "Category/ViewCategory";
     }
 
-    @GetMapping("/admin/category/add")
+    @GetMapping("/admin/addCategory")
     public String getCategoryAdd(Model model){
         model.addAttribute("categoryDTO", new CategoryDTO() );
         return "Category/AddCategory";
     }
 
-    @PostMapping("/admin/category/add")
+    @PostMapping("/admin/addCategory")
     public String postCategoryAdd(@ModelAttribute("categoryDTO") CategoryDTO categoryDTO){
         Category category=new Category();
         category.setCategoryId(categoryDTO.getCategoryId());
@@ -40,15 +41,24 @@ public class CategoryController {
         return "redirect:/admin/category";
     }
 
-    @GetMapping("admin/category/delete/{id}")
-    public String deleteCategory(@PathVariable int categoryid, Model model){
-        categoryService.removeCategoryById(categoryid);
+    @GetMapping("admin/deleteCategory/{id}")
+    public String deleteCategory(@PathVariable  Integer id){
+        categoryService.removeCategoryById(id);
         return "redirect:/admin/category";
     }
 
-
-    @GetMapping("admin/category/update/{id}")
+    @GetMapping("admin/updateCategory/{id}")
     public String updateCategory(@PathVariable int id, Model model){
+        Optional<Category> category = categoryService.findCategoryById(id);
+        if(category.isPresent()){
+            CategoryDTO categoryDTO=new CategoryDTO();
+            categoryDTO.setCategoryId(category.get().getCategoryId());
+            categoryDTO.setName(category.get().getName());
+            categoryDTO.setDescription(category.get().getDescription());
+
+            model.addAttribute("categoryDTO",categoryDTO);
+            return "Category/AddCategory";
+        }
         return "404";
     }
 }

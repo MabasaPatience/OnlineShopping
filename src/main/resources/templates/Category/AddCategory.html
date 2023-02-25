@@ -3,42 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
-    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <div th:replace="~{CommonPageslayout/common :: Myheader}"></div>
 </head>
 <body>
-<header class="header">
 
+<div class="wrapper">
+    <div th:insert="~{CommonPageslayout/common :: admin-navbar}"></div>
+    <div class="main_content container">
+        <div class="header">Welcome!! Have a nice day.</div>
+        <div class="info">
 
-</header>
+            <div class="row">
 
-<section class="container  content">
-<div  class="row">
-    <div class="col-4 bg-dark">
+                <div class="col-md-12 al
+                ign-items-center">
+
+                    <h1>Add Category</h1>
+                    <form th:action="@{/addCategory}" method="post" th:object="${categoryDTO}" class="col-md-5 align-items-center pl-5" >
+                        <input type="hidden" name="roleId" th:field="*{categoryId}">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label >Role</label>
+                                <input type="text" class="form-control" name="name" id="name" th:field="*{name}" placeholder="name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label >Description</label>
+                                <input type="textarea" class="form-control" name="description"id="description" th:field="*{description}" placeholder="description">
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="col-4">
-
-        <h1>Add Category</h1>
-    <form th:action="@{/admin/category/add}" method="post" th:object="${categoryDTO}" >
-        <input type="hidden" name="roleId" th:field="*{categoryId}">
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <label >Role</label>
-                <input type="text" class="form-control" name="name" id="name" th:field="*{name}" placeholder="name">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <label >Description</label>
-                <input type="textarea" class="form-control" name="description"id="Descr" th:field="*{description}" placeholder="Description">
-            </div>
-
-        </div>
-
-        <button type="submit" class="btn btn-primary">Sign in</button>
-    </form>
 </div>
-</div>
-</section>
+
 </body>
 </html>

@@ -15,3 +15,18 @@ $(".custom-file-input").on("change", function (){
     var fileName=$(this).val().split("\\").pop();
     $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 });
+let menu=document.querySelector('#menu-toggler');
+let header=document.querySelector('.sidebar');
+
+
+menu.onclick=()=>{
+    menu.classList.toggle('fa-times');
+    header.classList.toggle('active')
+}
+window.onscroll=()=>{
+    menu.classList.remove('fa-times')
+    header.classList.remove('active')
+}
+function showAlert() {
+    alert("The button was clicked!");
+}

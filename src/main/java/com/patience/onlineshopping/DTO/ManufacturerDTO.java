@@ -1,11 +1,15 @@
 package com.patience.onlineshopping.DTO;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ManufacturerDTO {
 
-    private Integer manufacturerId;
+    private int manufacturerId;
     private String name;
     private String addressline1;
     private String addressline2;
@@ -15,4 +19,5 @@ public class ManufacturerDTO {
     private String phone;
     private String email;
     private String rep;
+    private String province;
 }

@@ -3,6 +3,7 @@ package com.patience.onlineshopping.Service;
 import com.patience.onlineshopping.Entity.Product;
 import com.patience.onlineshopping.Repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,11 +27,17 @@ public class ProductServiceImpl implements  ProductService{
 
     @Override
     public void removeProductById(Integer id) {
-        productRepository.findById(id);
+        productRepository.deleteById(id);
     }
 
     @Override
     public Optional<Product> findProductById(Integer id) {
         return productRepository.findById(id);
     }
+
+    @Override
+    public Page<Product> findPagenated(int pageNo, int pageSize) {
+        return null;
+    }
+
 }

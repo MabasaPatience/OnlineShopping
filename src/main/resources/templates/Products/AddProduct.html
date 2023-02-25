@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <div th:replace="~{CommonPageslayout/common :: Myheader}"></div>
 </head>
 <body>
+<div class="wrapper">
+    <div th:insert="~{CommonPageslayout/common :: admin-navbar}"></div>
+    <div class="main_content container">
+        <div class="header">Welcome!! Have a nice day.</div>
+        <div class="info">
 
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-5 "></div>
+            </div>
+
+        </div>
+    </div>
+</div>
 </body>
 </html>

@@ -1,135 +1,241 @@
-@import url(
-'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
 *{
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: none;
-    border: none;
+    list-style: none;
     text-decoration: none;
-    text-transform: capitalize;
-    transition: all .2s linear;
-    line-height: 1.5;
-
+    font-family: 'Josefin Sans', sans-serif;
 }
 
-html{
-    font-size: 52.5%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
 body{
-    background: var(--background-2);
-
+    background-color: #f3f5f9;
 }
+
+/**Home Page**/
+
 header{
+    background: #c9c4c4;
+    box-shadow: black;
+}
+.home_navbar{
+    display:flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.home_navbar nav{
+    flex: 1;
+    text-align: right;
+}
+.home_navbar nav a{
+    display: inline-block;
+    padding-right: 20px;
+    color: black;
+}
+.section1{
+    background: white;
+
+}
+.section1 .content{
+padding-top: 10%;
+    padding-left: 30px;
+}
+.section1 .content h3 span{
+    color: #856404;
+}
+.section1 img{
     width: 100%;
-    top: 0;
-    right: 0;
-    z-index: 1000;
+    padding-left: 10rem;
+}
+.category {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: transparent;
-    padding: 28px 12%;
-    transition: all .50s ease ;
-    background: #a8a7a7;
-    text-decoration: none;
+    background : #110c0c;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+hr{
+    margin-bottom: 2px;
+    margin-top: 2px;
+    background: black;
+}
+.category .content{
+    flex: 1;
+    text-align: right;
+}
+.category a{
+    color: white;
+    display: inline-block;
+    padding-right: 20px;
+
 }
 
-header .logo{
+
+
+
+
+.wrapper{
     display: flex;
-    align-items: center;
-}
-header .logo {
-    color: var(--background-blue-1);
-    font-size: 1.7rem;
-    margin-right: 3px;
-    font-family: cursive;
-    text-decoration: none;
-}
-header .logo span{
-    color: gold;
-    font-size: 1.7rem;
-    font-weight: 600;
-    font-family: cursive;
-    text-decoration: none;
-
-}
-header .navbar{
-    display:flex;
-
-}
-header .navbar a{
-    color: var(--text-black-1);
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding:  5px 0;
-    margin: 0px 30px;
-    transition: all .50s ease;
-
-}
-header .navbar a:hover{
-    color: #19b701;
-
-}
-header .navbar a:active{
-    color: #19b701;
-
-}
-header .login{
-    display:flex;
-    align-items: center;
-}
-
-body {
-    background-color: #fbfbfb;
-}
-@media (min-width: 991.98px) {
-    main {
-        padding-left: 240px;
-    }
-}
-
-/* Sidebar */
-.sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    padding: 58px 0 0; /* Height of navbar */
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
-    width: 240px;
-    z-index: 600;
-}
-
-@media (max-width: 991.98px) {
-    .sidebar {
-        width: 100%;
-    }
-}
-.sidebar .active {
-    border-radius: 5px;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-}
-
-.sidebar-sticky {
     position: relative;
-    top: 0;
-    height: calc(100vh - 48px);
-    padding-top: 0.5rem;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 
-.main {
-    padding-top: 2rem;
+
+
+.wrapper .sidebar{
+    width: 200px;
+    height: 100%;
+    background: #506e69;
+    padding: 10px 0px;
+    position: fixed;
+}
+
+.wrapper .sidebar h2{
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 6px;
 
 }
-.header{
-    background: brown;
-    height: 2rem;
+
+.wrapper .sidebar ul li{
+    padding: 10px;
+    border-bottom: 1px solid #bdb8d7;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.wrapper .sidebar ul li a{
+    color: #bdb8d7;
+    display: block;
+    font-size: 12px;
+}
+
+.wrapper .sidebar ul li a .fas{
+    width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+    background-color: #594f8d;
+}
+
+.wrapper .sidebar ul li:hover a{
+    color: #fff;
+}
+
+.wrapper .sidebar .social_media{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.wrapper .main_content{
+    width: 100%;
+    margin-left: 200px;
+}
+
+.wrapper .main_content .header{
+    padding: 20px;
+    background: #fff;
+    color: #269404;
+    border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .info{
+    margin: 20px;
+    color: #717171;
+    line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+    margin-bottom: 20px;
+}
+.info .section2{
+    padding-top: 10px;
+    background: #c5baba;
+}
+
+.info i{
+    font-size: 6rem;
+    color: rgba(79, 40, 40, 0.5);
+margin: 0 1rem;
+}
+.info .tt{
+    margin-bottom: 1rem ;
+}
+
+.info .box2{
+    background: rgba(79, 3, 5, 0.66);
+    border-radius: 1.2rem;
+}
+.info .box1{
+    background: rgba(59, 101, 95, 0.66);
+    border-radius: 1.2rem;
+}
+.info .box3{
+    background: var(--text-gold-50);
+    border-radius: 1.2rem;
+}
+.info .box4{
+    background: rgba(79, 3, 5, 0.66);
+    border-radius: 1.2rem;
+}
+
+#menu-toggler{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10000;
+    background: var(--text-gold-50);
+    color: azure;
+    border-radius:.5rem ;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: none;
+}
+.sidebar.active{
+    left:0;
+}
+@media(max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    #menu-toggler {
+        display: initial;
+
+    }
+
+    sidebar {
+        left: -120%;
+    }
+}
+    @media(max-width:650px) {
+        html {
+            font-size: 50%;
+        }
+
+        header {
+            width: 100%;
+        }
+
+        .experience .box-container .box {
+            padding-right: 0;
+        }
+    }
+.info table {
+    font-size: 10px;
+    font-weight: 500;
+}
+.info table td{
+    height: 5px;
+
 }
